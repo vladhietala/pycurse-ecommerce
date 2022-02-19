@@ -1,0 +1,73 @@
+{
+    "name": "Loja Django",
+    "description": "This app does one little thing, and does it well.",
+    "success_url": "/admin",
+    "version": "0.1.0",
+    "env": {
+        "SECRET_KEY": {
+            "description": "A secret key for verifying the integrity of signed cookies.",
+            "generator": "secret"
+        },
+        "DJANGO_SETTINGS_MODULE": "loja.settings.heroku",
+        "ALLOWED_HOSTS": ".fkava.com,fathomless-bastion-39598-dev.herokuapp.com,fathomless-bastion-39598-staging.herokuapp.com,fathomless-bastion-39598.herokuapp.com",
+        "DJANGO_SUPERUSER_USERNAME": "loja",
+        "DJANGO_SUPERUSER_EMAIL": "loja@fkava.com",
+        "DJANGO_SUPERUSER_PASSWORD": {
+            "description": "A secret key for verifying the integrity of signed cookies.",
+            "generator": "secret"
+        }
+    },
+    "addons": [
+        "heroku-postgresql:hobby-dev",
+        "papertrail:choklad"
+    ],
+    "scripts": {
+        "postdeploy": "python manage.py createsuperuser --noinput"
+    },
+    "environments": {
+        "review": {
+            "addons": [
+                "heroku-postgresql:hobby-dev",
+                "papertrail:choklad"
+            ],
+            "env": {
+                "SECRET_KEY": {
+                    "description": "A secret key for verifying the integrity of signed cookies.",
+                    "generator": "secret"
+                },
+                "DJANGO_SETTINGS_MODULE": "loja.settings.review_app",
+                "DJANGO_SUPERUSER_PASSWORD": {
+                    "description": "A secret key for verifying the integrity of signed cookies.",
+                    "generator": "secret"
+                },
+                "DJANGO_SUPERUSER_USERNAME": "loja",
+                "DJANGO_SUPERUSER_EMAIL": "loja@fkava.com",
+                "DEBUG": "True"
+            },
+            "scripts": {
+                "postdeploy": "python manage.py createsuperuser --noinput"
+            }
+        },
+        "test": {
+            "env": {
+                "SECRET_KEY": {
+                    "description": "A secret key for verifying the integrity of signed cookies.",
+                    "generator": "secret"
+                },
+                "DJANGO_SUPERUSER_PASSWORD": {
+                    "description": "A secret key for verifying the integrity of signed cookies.",
+                    "generator": "secret"
+                },
+                "DJANGO_SETTINGS_MODULE": "loja.settings.heroku",
+                "ALLOWED_HOSTS": "fathomless-bastion-39598-staging.herokuapp.com"
+            },
+            "addons": [
+                "heroku-postgresql:hobby-dev",
+                "papertrail:choklad"
+            ],
+            "scripts": {
+                "postdeploy": "python manage.py createsuperuser --noinput"
+            }
+        }
+    }
+}

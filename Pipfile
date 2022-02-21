@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 django = "*"
+psycopg2-binary = "*"
 pillow = "*"
 django-crispy-forms = "*"
 pylint-django = "*"

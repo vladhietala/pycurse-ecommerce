@@ -12,10 +12,10 @@ gunicorn = "*"
 whitenoise = "*"
 django-environ = "*"
 boto3 = "*"
-
+django-debug-toolbar = "*"
+django-storages = "*"
 
 [dev-packages]
-django-debug-toolbar = "*"
 autopep8 = "*"
 
 [requires]

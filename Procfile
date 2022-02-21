@@ -1,3 +1,2 @@
-release: python3 manage.py migrate
-release: python3 manage.py createsuperuser --noinput
+release: ./release-tasks.sh
 web: gunicorn loja.wsgi --preload --log-file -

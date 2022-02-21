@@ -1,0 +1,61 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Make Migrations",
+            "type": "process",
+            "command": "pipenv",
+            "args": [
+                "run",
+                "python",
+                "manage.py",
+                "makemigrations",
+            ],
+            "problemMatcher": [
+                "$eslint-compact"
+            ]
+        },
+        {
+            "label": "Migrate",
+            "type": "process",
+            "command": "pipenv",
+            "args": [
+                "run",
+                "python",
+                "manage.py",
+                "migrate",
+            ],
+            "problemMatcher": [
+                "$eslint-compact"
+            ]
+        },
+        {
+            "label": "Bootstrap Django Dev Server",
+            "type": "process",
+            "command": "pipenv",
+            "args": [
+                "run",
+                "python",
+                "manage.py",
+                "runserver",
+            ],
+            "problemMatcher": [
+                "$eslint-compact"
+            ]
+        },
+        {
+            "label": "Run Django Tests",
+            "type": "process",
+            "command": "pipenv",
+            "args": [
+                "run",
+                "python",
+                "manage.py",
+                "test",
+            ],
+            "problemMatcher": [
+                "$eslint-compact"
+            ]
+        }
+    ]
+}

@@ -9,7 +9,7 @@
             "generator": "secret"
         },
         "DJANGO_SETTINGS_MODULE": "loja.settings.heroku",
-        "ALLOWED_HOSTS": ".fkava.com,fathomless-bastion-39598-dev.herokuapp.com,fathomless-bastion-39598-staging.herokuapp.com,fathomless-bastion-39598.herokuapp.com",
+        "ALLOWED_HOSTS": ".fkava.com,fathomless-bastion-dev.herokuapp.com,fathomless-bastion-staging.herokuapp.com,fathomless-bastion.herokuapp.com",
         "DJANGO_SUPERUSER_USERNAME": "loja",
         "DJANGO_SUPERUSER_EMAIL": "loja@fkava.com",
         "DJANGO_SUPERUSER_PASSWORD": {
@@ -42,7 +42,8 @@
                 },
                 "DJANGO_SUPERUSER_USERNAME": "loja",
                 "DJANGO_SUPERUSER_EMAIL": "loja@fkava.com",
-                "DEBUG": "True"
+                "DEBUG": "True",
+                "ALLOWED_HOSTS": ""
             },
             "scripts": {
                 "postdeploy": "python manage.py createsuperuser --noinput"
@@ -59,7 +60,7 @@
                     "generator": "secret"
                 },
                 "DJANGO_SETTINGS_MODULE": "loja.settings.heroku",
-                "ALLOWED_HOSTS": "fathomless-bastion-39598-staging.herokuapp.com"
+                "ALLOWED_HOSTS": "fathomless-bastion-staging.herokuapp.com"
             },
             "addons": [
                 "heroku-postgresql:hobby-dev",

@@ -1,16 +1,15 @@
-import os
-from pickletools import optimize
-from PIL import Image
-from io import BytesIO
 import sys
-from django.conf import settings
-from django.db import models
+from io import BytesIO
+
 from django.core.files.uploadedfile import InMemoryUploadedFile
+from django.db import models
+from PIL import Image
 
 # Create your models here.
 
 
 class Product(models.Model):
+
     product_name = models.CharField(max_length=100)
     short_description = models.TextField(max_length=255)
     long_description = models.TextField()
@@ -29,36 +28,36 @@ class Product(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    # @staticmethod
-    def resize_image(self, max_image_size=800):
-        img_pil = Image.open(self.image)
+    @staticmethod
+    def resize_image(image, max_image_size=800):
+        img_pil = Image.open(image)
         original_width, original_height = img_pil.size
         if original_width <= max_image_size:
             return
 
         output = BytesIO()
         new_height = round(original_height * max_image_size / original_width)
-        resized_img = img_pil.resize((max_image_size, new_height), Image.LANCZOS)
-        resized_img.save(
-            output,
-            format=img_pil.format,
-            optimize=True,
-            quality=80
-        )
+        resized_img = img_pil.resize(
+            (max_image_size, new_height),
+            Image.LANCZOS)
+        resized_img.save(output,
+                         format=img_pil.format,
+                         optimize=True,
+                         quality=80)
         output.seek(0)
-        self.image = InMemoryUploadedFile(
+        return InMemoryUploadedFile(
             output,
             'ImageField',
-            self.image.name,
+            image.name,
             img_pil.format,
             sys.getsizeof(output),
-            None
+            None,
         )
 
     def save(self, *args, **kwargs):
         max_image_size = 800
         if self.image:
-            self.resize_image(max_image_size)
+            self.image = self.resize_image(self.image, max_image_size)
         super().save(*args, **kwargs)
 
     def __str__(self):

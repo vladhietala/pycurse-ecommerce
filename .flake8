@@ -1,5 +1,5 @@
 [flake8]
-exclude = .vscode, .git, .venv
+exclude = .vscode, .git, .venv, */migrations/*
 extend-ignore = E203
 max-line-length = 88
 ; per-file-ignores =

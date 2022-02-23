@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Local Settings
 """
@@ -19,7 +20,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases

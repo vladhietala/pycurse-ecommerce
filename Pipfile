@@ -15,6 +15,7 @@ django-environ = "*"
 boto3 = "*"
 django-debug-toolbar = "*"
 django-storages = "*"
+django-localflavor = "*"
 
 [dev-packages]
 autopep8 = "*"

@@ -4,33 +4,33 @@ from io import BytesIO
 
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.db import models
+from django.urls import reverse
+from django.utils.translation import gettext_lazy as _
 from PIL import Image
 
 
 class Product(models.Model):
+    VARIABLE = 1
+    SIMPLE = 2
+    TYPE = ((VARIABLE, _("Variable")), (SIMPLE, _("Simple")))
 
-    product_name = models.CharField(max_length=100)
-    short_description = models.TextField(max_length=255)
-    long_description = models.TextField()
-    image = models.ImageField(upload_to="images/", blank=True, null=True)
-    slug = models.SlugField(max_length=30, unique=True)
-    price = models.DecimalField(max_digits=6, decimal_places=2)
-    promo_price = models.DecimalField(max_digits=6, decimal_places=2)
-    type = models.CharField(
-        default="V",
-        max_length=1,
-        choices=(
-            ("V", "Variable"),
-            ("S", "Simple"),
-        ),
+    product_name = models.CharField(_("product_name"), max_length=100)
+    short_description = models.TextField(_("short_description"), max_length=255)
+    long_description = models.TextField(_("long_description"))
+    image = models.ImageField(
+        _("image"), upload_to="images/products/", blank=True, null=True
     )
+    slug = models.SlugField(_("slug"), max_length=30, unique=True)
+    price = models.DecimalField(_("price"), max_digits=6, decimal_places=2)
+    promo_price = models.DecimalField(_("promo_price"), max_digits=6, decimal_places=2)
+    type = models.PositiveSmallIntegerField(_("type"), choices=TYPE, default=SIMPLE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ("-created_at",)
-        verbose_name_plural = "Produtos"
-        verbose_name = "Produto"
+        verbose_name_plural = _("Products")
+        verbose_name = _("Product")
 
     def __str__(self):
         return self.product_name
@@ -40,6 +40,9 @@ class Product(models.Model):
         if self.image:
             self.image = self.resize_image(self.image, max_image_size)
         super().save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse("product", kwargs={"pk": self.pk})
 
     @staticmethod
     def resize_image(image, max_image_size=800):
@@ -64,16 +67,20 @@ class Product(models.Model):
 
 
 class Variation(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    name = models.CharField(max_length=50, blank=True, null=True)
-    price = models.DecimalField(max_digits=6, decimal_places=2)
-    promo_price = models.DecimalField(max_digits=6, decimal_places=2)
-    inventory = models.PositiveIntegerField(default=1)
+    product = models.ForeignKey(
+        verbose_name=_("product"),
+        to=Product,
+        on_delete=models.CASCADE,
+    )
+    name = models.CharField(_("name"), max_length=50, blank=True, null=True)
+    price = models.DecimalField(_("price"), max_digits=6, decimal_places=2)
+    promo_price = models.DecimalField(_("promo_price"), max_digits=6, decimal_places=2)
+    stock = models.PositiveIntegerField(_("stock"), default=0)
 
     class Meta:
         ordering = ("-price",)
-        verbose_name_plural = "Variações"
-        verbose_name = "Variação"
+        verbose_name_plural = _("Variations")
+        verbose_name = _("Variation")
 
     def __str__(self):
         return self.name or self.product.product_name

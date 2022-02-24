@@ -9,7 +9,7 @@
                 "run",
                 "python",
                 "manage.py",
-                "makemigrations",
+                "makemigrations"
             ],
             "problemMatcher": [
                 "$eslint-compact"
@@ -23,7 +23,7 @@
                 "run",
                 "python",
                 "manage.py",
-                "migrate",
+                "migrate"
             ],
             "problemMatcher": [
                 "$eslint-compact"
@@ -37,7 +37,7 @@
                 "run",
                 "python",
                 "manage.py",
-                "runserver",
+                "runserver"
             ],
             "problemMatcher": [
                 "$eslint-compact"
@@ -51,11 +51,38 @@
                 "run",
                 "python",
                 "manage.py",
-                "test",
+                "test"
             ],
             "problemMatcher": [
                 "$eslint-compact"
             ]
+        },
+        {
+            "type": "docker-build",
+            "label": "docker-build",
+            "platform": "python",
+            "dockerBuild": {
+                "tag": "ecommerce:latest",
+                "dockerfile": "${workspaceFolder}/Dockerfile",
+                "context": "${workspaceFolder}",
+                "pull": true
+            }
+        },
+        {
+            "type": "docker-run",
+            "label": "docker-run: debug",
+            "dependsOn": [
+                "docker-build"
+            ],
+            "python": {
+                "args": [
+                    "runserver",
+                    "0.0.0.0:8000",
+                    "--nothreading",
+                    "--noreload"
+                ],
+                "file": "manage.py"
+            }
         }
     ]
 }

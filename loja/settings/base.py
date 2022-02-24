@@ -19,6 +19,7 @@ from django.contrib.messages import constants as messages
 env = environ.Env(
     # set casting, default value
     DEBUG=(bool, False),
+    DJANGO_ENVIROMENT=(str, "local"),
 )
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,10 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 # Application definition
 
-INSTALLED_APPS = [
-    "product",
-    "order",
-    "userprofile",
+DJANGO_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -38,6 +36,16 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.humanize",
 ]
+
+THIRD_PARTY_APPS = []
+
+LOCAL_APPS = [
+    "loja.product",
+    "loja.order",
+    "loja.profile",
+]
+
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -130,5 +138,7 @@ MESSAGE_TAGS = {
     messages.WARNING: "alert-warning",
 }
 
-AWS_S3_REGION_NAME = "eu-west-1"
 AWS_DEFAULT_ACL = "private"
+AWS_LOCATION = env("DJANGO_ENVIROMENT")
+AWS_S3_REGION_NAME = "eu-west-1"
+AWS_S3_FILE_OVERWRITE = False

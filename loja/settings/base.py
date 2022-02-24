@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for loja project.
 
@@ -18,6 +19,7 @@ from django.contrib.messages import constants as messages
 env = environ.Env(
     # set casting, default value
     DEBUG=(bool, False),
+    DJANGO_ENVIROMENT=(str, 'local'),
 )
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,9 +28,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 # Application definition
 
 INSTALLED_APPS = [
-    'product',
-    'order',
-    'userprofile',
+    'loja.product',
+    'loja.order',
+    'loja.profile',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -123,3 +125,5 @@ MESSAGE_TAGS = {
 
 AWS_S3_REGION_NAME = 'eu-west-1'
 AWS_DEFAULT_ACL = 'private'
+AWS_LOCATION = env('DJANGO_ENVIROMENT')
+AWS_S3_FILE_OVERWRITE = False

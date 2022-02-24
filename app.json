@@ -9,13 +9,14 @@
             "generator": "secret"
         },
         "DJANGO_SETTINGS_MODULE": "loja.settings.heroku",
-        "ALLOWED_HOSTS": ".fkava.com,fathomless-bastion-dev.herokuapp.com,fathomless-bastion-staging.herokuapp.com,fathomless-bastion.herokuapp.com",
+        "ALLOWED_HOSTS": ".fkava.com,.herokuapp.com",
         "DJANGO_SUPERUSER_USERNAME": "loja",
         "DJANGO_SUPERUSER_EMAIL": "loja@fkava.com",
         "DJANGO_SUPERUSER_PASSWORD": {
             "description": "A secret key for verifying the integrity of signed cookies.",
             "generator": "secret"
-        }
+        },
+        "DJANGO_ENVIROMENT": "production"
     },
     "addons": [
         "heroku-postgresql:hobby-dev",
@@ -43,7 +44,8 @@
                 "DJANGO_SUPERUSER_USERNAME": "loja",
                 "DJANGO_SUPERUSER_EMAIL": "loja@fkava.com",
                 "DEBUG": "True",
-                "ALLOWED_HOSTS": ""
+                "ALLOWED_HOSTS": ".herokuapp.com",
+                "DJANGO_ENVIROMENT": "review"
             },
             "scripts": {
                 "postdeploy": "python manage.py createsuperuser --noinput"

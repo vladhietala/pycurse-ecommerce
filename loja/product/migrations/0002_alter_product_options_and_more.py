@@ -7,37 +7,55 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('product', '0001_initial'),
+        ("product", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='product',
-            options={'ordering': ('-created_at',), 'verbose_name': 'Produto', 'verbose_name_plural': 'Produtos'},
+            name="product",
+            options={
+                "ordering": ("-created_at",),
+                "verbose_name": "Produto",
+                "verbose_name_plural": "Produtos",
+            },
         ),
         migrations.RenameField(
-            model_name='product',
-            old_name='mktg_price',
-            new_name='price',
+            model_name="product",
+            old_name="mktg_price",
+            new_name="price",
         ),
         migrations.RenameField(
-            model_name='product',
-            old_name='promo_mktg_price',
-            new_name='promo_price',
+            model_name="product",
+            old_name="promo_mktg_price",
+            new_name="promo_price",
         ),
         migrations.CreateModel(
-            name='Variation',
+            name="Variation",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('price', models.DecimalField(decimal_places=2, max_digits=6)),
-                ('promo_price', models.DecimalField(decimal_places=2, max_digits=6)),
-                ('inventory', models.PositiveIntegerField(default=1)),
-                ('product', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='product.product')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("price", models.DecimalField(decimal_places=2, max_digits=6)),
+                ("promo_price", models.DecimalField(decimal_places=2, max_digits=6)),
+                ("inventory", models.PositiveIntegerField(default=1)),
+                (
+                    "product",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="product.product",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Variação',
-                'verbose_name_plural': 'Variações',
-                'ordering': ('-price',),
+                "verbose_name": "Variação",
+                "verbose_name_plural": "Variações",
+                "ordering": ("-price",),
             },
         ),
     ]

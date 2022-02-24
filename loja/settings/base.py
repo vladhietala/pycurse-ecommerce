@@ -15,6 +15,7 @@ from pathlib import Path
 
 import environ
 from django.contrib.messages import constants as messages
+from django.utils.translation import gettext_lazy as _
 
 env = environ.Env(
     # set casting, default value
@@ -37,7 +38,7 @@ DJANGO_APPS = [
     "django.contrib.humanize",
 ]
 
-THIRD_PARTY_APPS = []
+THIRD_PARTY_APPS = ["localflavor"]
 
 LOCAL_APPS = [
     "loja.product",
@@ -51,6 +52,7 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -106,6 +108,15 @@ TIME_ZONE = "America/Sao_Paulo"
 USE_I18N = True
 
 USE_TZ = True
+
+LOCALE_PATHS = [BASE_DIR / "locale"]
+LANGUAGES = [
+    ("de", _("German")),
+    ("en", _("English")),
+    ("fr", _("French")),
+    ("es", _("Spanish")),
+    ("pt-BR", _("Brazilian Portuguese")),
+]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/

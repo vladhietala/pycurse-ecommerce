@@ -16,6 +16,7 @@ boto3 = "*"
 django-debug-toolbar = "*"
 django-storages = "*"
 django-localflavor = "*"
+crispy-bootstrap5 = "*"
 
 [dev-packages]
 autopep8 = "*"

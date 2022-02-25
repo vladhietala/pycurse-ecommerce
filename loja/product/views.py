@@ -1,8 +1,32 @@
 # -*- coding: utf-8 -*-
-from django.shortcuts import render
+from django.views import View
+from django.views.generic import DetailView, ListView
 
-# Create your views here.
+from .models import Product
 
 
-def index(request):
-    return render(request, "index.html")
+class ProductListView(ListView):
+    model = Product
+    context_object_name = "products"
+    paginate_by = 12
+
+
+class ProductDetailView(DetailView):
+    model = Product
+    template_name = "product_detail.html"
+
+
+class AddToCart(View):
+    pass
+
+
+class RemoveFromCart(View):
+    pass
+
+
+class Cart(View):
+    pass
+
+
+class Checkout(View):
+    pass

@@ -5,6 +5,7 @@ from io import BytesIO
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.db import models
 from django.urls import reverse
+from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 from PIL import Image
 
@@ -20,7 +21,7 @@ class Product(models.Model):
     image = models.ImageField(
         _("image"), upload_to="images/products/", blank=True, null=True
     )
-    slug = models.SlugField(_("slug"), max_length=30, unique=True)
+    slug = models.SlugField(_("slug"), unique=True, blank=True)
     price = models.DecimalField(_("price"), max_digits=6, decimal_places=2)
     promo_price = models.DecimalField(_("promo_price"), max_digits=6, decimal_places=2)
     type = models.PositiveSmallIntegerField(_("type"), choices=TYPE, default=SIMPLE)
@@ -39,6 +40,10 @@ class Product(models.Model):
         max_image_size = 800
         if self.image:
             self.image = self.resize_image(self.image, max_image_size)
+
+        if not self.slug:
+            self.slug = slugify(self.product_name)
+
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):
@@ -72,7 +77,7 @@ class Variation(models.Model):
         to=Product,
         on_delete=models.CASCADE,
     )
-    name = models.CharField(_("name"), max_length=50, blank=True, null=True)
+    variation_name = models.CharField(_("name"), max_length=50, blank=True, null=True)
     price = models.DecimalField(_("price"), max_digits=6, decimal_places=2)
     promo_price = models.DecimalField(_("promo_price"), max_digits=6, decimal_places=2)
     stock = models.PositiveIntegerField(_("stock"), default=0)
@@ -83,7 +88,7 @@ class Variation(models.Model):
         verbose_name = _("Variation")
 
     def __str__(self):
-        return self.name or self.product.product_name
+        return self.variation_name or self.product.product_name
 
     def get_price(self):
         if self.promo_price > 0:

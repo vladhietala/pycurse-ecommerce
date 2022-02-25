@@ -159,4 +159,4 @@ AWS_S3_FILE_OVERWRITE = False
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
-CSRF_TRUSTED_ORIGINS = ["https://*.fkava.com"]
+CSRF_TRUSTED_ORIGINS = ["https://*.fkava.com", "https://*.herokuapp.com"]

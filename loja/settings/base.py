@@ -11,7 +11,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
-import os
 from pathlib import Path
 
 import environ
@@ -106,16 +105,14 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = "pt-br"
+LANGUAGE_CODE = "pt-BR"
 
 TIME_ZONE = "America/Sao_Paulo"
 
 USE_I18N = True
 USEL10N = True
 USE_TZ = True
-SITE_ROOT = Path(__file__).resolve().parent.parent
-LOCALE_PATHS = (os.path.join(SITE_ROOT, "locale"),)
-# LOCALE_PATHS = [BASE_DIR / "locale"]
+LOCALE_PATHS = [BASE_DIR / "loja" / "locale"]
 LANGUAGES = [
     ("pt-br", _("Brazilian Portuguese")),
 ]

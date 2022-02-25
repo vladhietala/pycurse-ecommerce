@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Loja do Vlad\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-25 12:31-0300\n"
+"POT-Creation-Date: 2022-02-25 17:22-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Vlad Hietala <vlad@fkava.com>\n"
 "Language-Team: Vlad <vlad@li.org>\n"
@@ -159,9 +159,13 @@ msgstr "Variacão"
 
 #: loja/product/templates/product/product_detail.html:7
 #: loja/product/templates/product/product_detail.html:13
-#: loja/product/views.py:23
+#: loja/product/views.py:29
 msgid "Welcome to our page"
 msgstr "Bem vindo à nossa página"
+
+#: loja/product/views.py:30
+msgid "Postal Code"
+msgstr ""
 
 #: loja/profile/models.py:12
 msgid "birth date"
@@ -187,7 +191,11 @@ msgstr "bairro"
 msgid "city"
 msgstr "cidade"
 
-#: loja/settings/base.py:120
+#: loja/profile/models.py:19
+msgid "state"
+msgstr "estado"
+
+#: loja/settings/base.py:117
 msgid "Brazilian Portuguese"
 msgstr "Português Brasileiro"
 

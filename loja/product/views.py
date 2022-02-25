@@ -23,11 +23,11 @@ class ProductListView(ListView):
 class ProductDetailView(View):
     def get(self, request, *args, **kwargs):
 
-        response = f"<p>SITE_ROOT: {settings.SITE_ROOT}</p>"
+        response = f"<p>BASE_DIR: {settings.BASE_DIR}</p>"
         response += f"<p>LOCALE_PATHS: {settings.LOCALE_PATHS}</p>"
         response += f"<p>Current language: {translation.get_language ()}</p>"
-        response += _("<h1>Welcome to our page!</h1>")
-        response += _("<p>Postal Code</p>")
+        response += "<h1>" + _("Welcome to our page") + "!</h1>"
+        response += "<p>" + _("Postal Code") + "</p>"
         return HttpResponse(response)
 
 

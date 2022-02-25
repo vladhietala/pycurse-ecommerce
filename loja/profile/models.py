@@ -10,14 +10,14 @@ class Profile(models.Model):
 
     user = models.OneToOneField(User, verbose_name=_("user"), on_delete=models.CASCADE)
     birth_date = models.DateField(_("birth date"))
-    cpf = br_models.BRCPFField()
+    cpf = br_models.BRCPFField(br_models.BRCPFField.description)
     address = models.CharField(_("address"), max_length=50)
     number = models.CharField(_("number"), max_length=5)
     complement = models.CharField(_("complement"), max_length=30, null=True, blank=True)
     neighborhood = models.CharField(_("neighborhood"), max_length=30)
     city = models.CharField(_("city"), max_length=30)
-    state = br_models.BRStateField()
-    postalcode = br_models.BRPostalCodeField()
+    state = br_models.BRStateField(_("state"))
+    postalcode = br_models.BRPostalCodeField(br_models.BRPostalCodeField.description)
 
     class Meta:
         pass

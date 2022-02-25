@@ -2,18 +2,18 @@
 <!doctype html>
 <html lang="en">
     <head>
-        {% include 'partial/_head.html' %}
+        {% include "partial/_head.html" %}
         <title>
             {% block title %}
             {% endblock title %}
         Hello, world!</title>
     </head>
     <body>
-        {% include 'partial/_nav.html' %}
+        {% include "partial/_nav.html" %}
         <main class="container mt-4 mb-4">
             {% block content %}
             {% endblock content %}
         </main>
-        {% include 'partial/_footer.html' %}
+        {% include "partial/_footer.html" %}
     </body>
 </html>

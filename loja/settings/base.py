@@ -15,8 +15,7 @@ from pathlib import Path
 
 import environ
 from django.contrib.messages import constants as messages
-
-# from django.utils.translation import gettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 env = environ.Env(
     # set casting, default value
@@ -106,7 +105,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = "pt-BR"
+LANGUAGE_CODE = "pt-br"
 
 TIME_ZONE = "America/Sao_Paulo"
 
@@ -114,14 +113,14 @@ USE_I18N = True
 USEL10N = True
 USE_TZ = True
 
-# LOCALE_PATHS = [BASE_DIR / "locale"]
-# LANGUAGES = [
-#     ("de", _("German")),
-#     ("en", _("English")),
-#     ("fr", _("French")),
-#     ("es", _("Spanish")),
-#     ("pt-BR", _("Brazilian Portuguese")),
-# ]
+LOCALE_PATHS = [BASE_DIR / "locale"]
+LANGUAGES = [
+    ("de", _("German")),
+    ("en", _("English")),
+    ("fr", _("French")),
+    ("es", _("Spanish")),
+    ("pt-br", _("Brazilian Portuguese")),
+]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
@@ -161,3 +160,5 @@ AWS_S3_FILE_OVERWRITE = False
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+CSRF_TRUSTED_ORIGINS = ["https://*.fkava.com"]

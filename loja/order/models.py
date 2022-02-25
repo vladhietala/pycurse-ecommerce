@@ -58,8 +58,8 @@ class OrderItem(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        verbose_name = _("Items do Pedido")
-        verbose_name_plural = _("Itens do Pedido")
+        verbose_name = _("Order item")
+        verbose_name_plural = _("Order items")
         ordering = ("-created_at",)
 
     def __str__(self):

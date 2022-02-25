@@ -1,0 +1,219 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-25 10:14-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: loja/order/models.py:16
+msgid "Created"
+msgstr ""
+
+#: loja/order/models.py:17
+msgid "Aproved"
+msgstr ""
+
+#: loja/order/models.py:18
+msgid "Rejected"
+msgstr ""
+
+#: loja/order/models.py:19
+msgid "Pending"
+msgstr ""
+
+#: loja/order/models.py:20
+msgid "Sent"
+msgstr ""
+
+#: loja/order/models.py:21
+msgid "Finished"
+msgstr ""
+
+#: loja/order/models.py:24 loja/profile/models.py:11
+msgid "user"
+msgstr ""
+
+#: loja/order/models.py:25
+msgid "total"
+msgstr ""
+
+#: loja/order/models.py:27
+msgid "status"
+msgstr ""
+
+#: loja/order/models.py:34
+msgid "Order"
+msgstr ""
+
+#: loja/order/models.py:35
+msgid "Orders"
+msgstr ""
+
+#: loja/order/models.py:46
+msgid "order"
+msgstr ""
+
+#: loja/order/models.py:47 loja/product/models.py:76
+msgid "product"
+msgstr ""
+
+#: loja/order/models.py:48
+msgid "product_id"
+msgstr ""
+
+#: loja/order/models.py:49
+msgid "variation"
+msgstr ""
+
+#: loja/order/models.py:50
+msgid "variation_id"
+msgstr ""
+
+#: loja/order/models.py:51 loja/product/models.py:25 loja/product/models.py:81
+msgid "price"
+msgstr ""
+
+#: loja/order/models.py:53
+msgid "promotional_price"
+msgstr ""
+
+#: loja/order/models.py:55
+msgid "quantity"
+msgstr ""
+
+#: loja/order/models.py:56 loja/product/models.py:22
+msgid "image"
+msgstr ""
+
+#: loja/order/models.py:61
+msgid "Order item"
+msgstr ""
+
+#: loja/order/models.py:62
+msgid "Order items"
+msgstr ""
+
+#: loja/product/models.py:16
+msgid "Variable"
+msgstr ""
+
+#: loja/product/models.py:16
+msgid "Simple"
+msgstr ""
+
+#: loja/product/models.py:18
+msgid "product_name"
+msgstr ""
+
+#: loja/product/models.py:19
+msgid "short_description"
+msgstr ""
+
+#: loja/product/models.py:20
+msgid "long_description"
+msgstr ""
+
+#: loja/product/models.py:24
+msgid "slug"
+msgstr ""
+
+#: loja/product/models.py:26 loja/product/models.py:82
+msgid "promo_price"
+msgstr ""
+
+#: loja/product/models.py:27
+msgid "type"
+msgstr ""
+
+#: loja/product/models.py:33
+msgid "Products"
+msgstr ""
+
+#: loja/product/models.py:34
+msgid "Product"
+msgstr ""
+
+#: loja/product/models.py:80
+msgid "name"
+msgstr ""
+
+#: loja/product/models.py:83
+msgid "stock"
+msgstr ""
+
+#: loja/product/models.py:87
+msgid "Variations"
+msgstr ""
+
+#: loja/product/models.py:88
+msgid "Variation"
+msgstr ""
+
+#: loja/product/templates/product/product_detail.html:7
+#: loja/product/templates/product/product_detail.html:13
+msgid "Welcome to our page"
+msgstr "Bem vindo a nossa página"
+
+#: loja/profile/models.py:12
+msgid "birth_date"
+msgstr ""
+
+#: loja/profile/models.py:14
+msgid "address"
+msgstr ""
+
+#: loja/profile/models.py:15
+msgid "number"
+msgstr ""
+
+#: loja/profile/models.py:17
+msgid "complement"
+msgstr ""
+
+#: loja/profile/models.py:19
+msgid "neighborhood"
+msgstr "bairro"
+
+#: loja/profile/models.py:20
+msgid "city"
+msgstr ""
+
+#: loja/profile/models.py:25
+msgid "Profile"
+msgstr ""
+
+#: loja/profile/models.py:26
+msgid "Profiles"
+msgstr ""
+
+#: loja/settings/base.py:119
+msgid "German"
+msgstr ""
+
+#: loja/settings/base.py:120
+msgid "English"
+msgstr ""
+
+#: loja/settings/base.py:121
+msgid "French"
+msgstr ""
+
+#: loja/settings/base.py:122
+msgid "Spanish"
+msgstr ""
+
+#: loja/settings/base.py:123
+msgid "Brazilian Portuguese"
+msgstr ""

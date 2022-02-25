@@ -1,0 +1,16 @@
+{% load filters %}
+{% load i18n %}
+{% load l10n %}
+{% get_current_language as LANGUAGE_CODE %}
+Current language: {{ LANGUAGE_CODE }}
+<p>
+    {% translate "Welcome to our page" %}
+</p>
+{% language 'pt_br' %}
+    {% get_current_language as LANGUAGE_CODE %}
+    Current language: {{ LANGUAGE_CODE }}
+    <p>
+        {% translate "Welcome to our page" %}
+        R$ {{ 19.50 | floatformat:2 }}
+    </p>
+{% endlanguage %}

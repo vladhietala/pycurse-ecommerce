@@ -3,19 +3,23 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Loja do Vlad\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-25 10:25-0300\n"
+"POT-Creation-Date: 2022-02-25 12:31-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Last-Translator: Vlad Hietala <vlad@fkava.com>\n"
+"Language-Team: Vlad <vlad@li.org>\n"
+"Language: br\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=5; plural=((n%10 == 1) && (n%100 != 11) && (n%100 !"
+"=71) && (n%100 !=91) ? 0 :(n%10 == 2) && (n%100 != 12) && (n%100 !=72) && (n"
+"%100 !=92) ? 1 :(n%10 ==3 || n%10==4 || n%10==9) && (n%100 < 10 || n% 100 > "
+"19) && (n%100 < 70 || n%100 > 79) && (n%100 < 90 || n%100 > 99) ? 2 :(n != 0 "
+"&& n % 1000000 == 0) ? 3 : 4);\n"
 
 #: loja/order/models.py:16
 msgid "Created"
@@ -65,7 +69,7 @@ msgstr "Pedidos"
 msgid "order"
 msgstr "pedido"
 
-#: loja/order/models.py:47 loja/product/models.py:76
+#: loja/order/models.py:47 loja/product/models.py:74
 msgid "product"
 msgstr "produto"
 
@@ -81,7 +85,7 @@ msgstr "variação"
 msgid "variation_id"
 msgstr "id_cariacao"
 
-#: loja/order/models.py:51 loja/product/models.py:25 loja/product/models.py:81
+#: loja/order/models.py:51 loja/product/models.py:25 loja/product/models.py:79
 msgid "price"
 msgstr "preço"
 
@@ -129,7 +133,7 @@ msgstr "descrição_longa"
 msgid "slug"
 msgstr "slug"
 
-#: loja/product/models.py:26 loja/product/models.py:82
+#: loja/product/models.py:26 loja/product/models.py:80
 msgid "promo_price"
 msgstr "preço_promocional"
 
@@ -137,38 +141,31 @@ msgstr "preço_promocional"
 msgid "type"
 msgstr "tipo"
 
-#: loja/product/models.py:33
-msgid "Products"
-msgstr "Produtos"
-
-#: loja/product/models.py:34
-msgid "Product"
-msgstr "Produto"
-
-#: loja/product/models.py:80
+#: loja/product/models.py:78
 msgid "name"
 msgstr "nome"
 
-#: loja/product/models.py:83
+#: loja/product/models.py:81
 msgid "stock"
 msgstr "estoque"
 
-#: loja/product/models.py:87
+#: loja/product/models.py:85
 msgid "Variations"
 msgstr "Variações"
 
-#: loja/product/models.py:88
+#: loja/product/models.py:86
 msgid "Variation"
 msgstr "Variacão"
 
 #: loja/product/templates/product/product_detail.html:7
 #: loja/product/templates/product/product_detail.html:13
+#: loja/product/views.py:23
 msgid "Welcome to our page"
 msgstr "Bem vindo à nossa página"
 
 #: loja/profile/models.py:12
-msgid "birth_date"
-msgstr "data_nascimento"
+msgid "birth date"
+msgstr "data de nascimento"
 
 #: loja/profile/models.py:14
 msgid "address"
@@ -178,42 +175,42 @@ msgstr "endereço"
 msgid "number"
 msgstr "número"
 
-#: loja/profile/models.py:17
+#: loja/profile/models.py:16
 msgid "complement"
 msgstr "complemento"
 
-#: loja/profile/models.py:19
+#: loja/profile/models.py:17
 msgid "neighborhood"
 msgstr "bairro"
 
-#: loja/profile/models.py:20
+#: loja/profile/models.py:18
 msgid "city"
 msgstr "cidade"
 
-#: loja/profile/models.py:25
-msgid "Profile"
-msgstr "Perfil"
-
-#: loja/profile/models.py:26
-msgid "Profiles"
-msgstr "Perfis"
-
-#: loja/settings/base.py:118
-msgid "German"
-msgstr "Alemão"
-
-#: loja/settings/base.py:119
-msgid "English"
-msgstr "Inglês"
-
 #: loja/settings/base.py:120
-msgid "French"
-msgstr "Francês"
-
-#: loja/settings/base.py:121
-msgid "Spanish"
-msgstr "Espanhol"
-
-#: loja/settings/base.py:122
 msgid "Brazilian Portuguese"
 msgstr "Português Brasileiro"
+
+#~ msgid "Products"
+#~ msgstr "Produtos"
+
+#~ msgid "Product"
+#~ msgstr "Produto"
+
+#~ msgid "Profile"
+#~ msgstr "Perfil"
+
+#~ msgid "Profiles"
+#~ msgstr "Perfis"
+
+#~ msgid "English"
+#~ msgstr "Inglês"
+
+#~ msgid "German"
+#~ msgstr "Alemão"
+
+#~ msgid "French"
+#~ msgstr "Francês"
+
+#~ msgid "Spanish"
+#~ msgstr "Espanhol"

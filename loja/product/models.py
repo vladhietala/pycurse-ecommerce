@@ -30,8 +30,6 @@ class Product(models.Model):
 
     class Meta:
         ordering = ("-created_at",)
-        verbose_name_plural = _("Products")
-        verbose_name = _("Product")
 
     def __str__(self):
         return self.product_name

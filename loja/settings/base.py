@@ -11,6 +11,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 import environ
@@ -112,13 +113,10 @@ TIME_ZONE = "America/Sao_Paulo"
 USE_I18N = True
 USEL10N = True
 USE_TZ = True
-
-LOCALE_PATHS = [BASE_DIR / "locale"]
+SITE_ROOT = Path(__file__).resolve().parent.parent
+LOCALE_PATHS = (os.path.join(SITE_ROOT, "locale"),)
+# LOCALE_PATHS = [BASE_DIR / "locale"]
 LANGUAGES = [
-    ("de", _("German")),
-    ("en", _("English")),
-    ("fr", _("French")),
-    ("es", _("Spanish")),
     ("pt-br", _("Brazilian Portuguese")),
 ]
 

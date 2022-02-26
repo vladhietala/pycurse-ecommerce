@@ -17,6 +17,7 @@ django-debug-toolbar = "*"
 django-storages = "*"
 django-localflavor = "*"
 crispy-bootstrap5 = "*"
+fontawesomefree = "*"
 
 [dev-packages]
 autopep8 = "*"

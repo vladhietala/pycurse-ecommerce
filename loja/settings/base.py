@@ -42,6 +42,7 @@ THIRD_PARTY_APPS = [
     "localflavor",
     "crispy_forms",
     "crispy_bootstrap5",
+    "fontawesomefree",
 ]
 
 LOCAL_APPS = [

@@ -31,12 +31,12 @@ class Order(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        verbose_name = _("Order")
-        verbose_name_plural = _("Orders")
+        verbose_name = _("order")
+        verbose_name_plural = _("orders")
         ordering = ("-created_at",)
 
     def __str__(self):
-        return f"Pedido nº {self.pk}"
+        return f"{Order._meta.verbose_name} #{self.pk}"
 
     def get_absolute_url(self):
         return reverse("Order_detail", kwargs={"pk": self.pk})
@@ -45,28 +45,28 @@ class Order(models.Model):
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, verbose_name=_("order"), on_delete=models.CASCADE)
     product = models.CharField(_("product"), max_length=100)
-    product_id = models.PositiveIntegerField(_("product_id"))
+    product_id = models.PositiveIntegerField(_("product id"))
     variation = models.CharField(_("variation"), max_length=100)
-    variation_id = models.PositiveIntegerField(_("variation_id"))
+    variation_id = models.PositiveIntegerField(_("variation id"))
     price = models.DecimalField(_("price"), max_digits=6, decimal_places=2)
     promotional_price = models.DecimalField(
-        _("promotional_price"), max_digits=6, decimal_places=2
+        _("promotional price"), max_digits=6, decimal_places=2
     )
     quantity = models.PositiveIntegerField(_("quantity"))
-    image = models.CharField(_("image"), max_length=2000)
+    image = models.CharField(_("image"), max_length=2000, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        verbose_name = _("Order item")
-        verbose_name_plural = _("Order items")
+        verbose_name = _("order item")
+        verbose_name_plural = _("order items")
         ordering = ("-created_at",)
 
     def __str__(self):
-        return f"Item do {self.order}"
+        return f"{_('item do').capitalize()} {self.order}"
 
     def save(self, *args, **kwargs):
-        super.save(*args, **kwargs)
+        super().save(*args, **kwargs)
 
     def get_absolute_url(self):
         return reverse("OrderItem_detail", kwargs={"pk": self.pk})

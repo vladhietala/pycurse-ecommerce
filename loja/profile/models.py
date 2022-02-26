@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
@@ -20,7 +21,8 @@ class Profile(models.Model):
     postalcode = br_models.BRPostalCodeField(br_models.BRPostalCodeField.description)
 
     class Meta:
-        pass
+        verbose_name = _("profile")
+        verbose_name_plural = _("profiles")
 
     def __str__(self):
         return self.user.get_full_name() or self.user.username

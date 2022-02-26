@@ -15,20 +15,24 @@ class Product(models.Model):
     SIMPLE = 2
     TYPE = ((VARIABLE, _("Variable")), (SIMPLE, _("Simple")))
 
-    product_name = models.CharField(_("product_name"), max_length=100)
-    short_description = models.TextField(_("short_description"), max_length=255)
-    long_description = models.TextField(_("long_description"))
+    product_name = models.CharField(_("product name"), max_length=100)
+    short_description = models.TextField(_("short description"), max_length=255)
+    long_description = models.TextField(_("long description"))
     image = models.ImageField(
         _("image"), upload_to="images/products/", blank=True, null=True
     )
     slug = models.SlugField(_("slug"), unique=True, blank=True)
     price = models.DecimalField(_("price"), max_digits=6, decimal_places=2)
-    promo_price = models.DecimalField(_("promo_price"), max_digits=6, decimal_places=2)
+    promo_price = models.DecimalField(
+        _("promotional price"), max_digits=6, decimal_places=2
+    )
     type = models.PositiveSmallIntegerField(_("type"), choices=TYPE, default=SIMPLE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
+        verbose_name = _("product")
+        verbose_name_plural = _("products")
         ordering = ("-created_at",)
 
     def __str__(self):
@@ -77,13 +81,15 @@ class Variation(models.Model):
     )
     variation_name = models.CharField(_("name"), max_length=50, blank=True, null=True)
     price = models.DecimalField(_("price"), max_digits=6, decimal_places=2)
-    promo_price = models.DecimalField(_("promo_price"), max_digits=6, decimal_places=2)
+    promo_price = models.DecimalField(
+        _("promotional price"), max_digits=6, decimal_places=2
+    )
     stock = models.PositiveIntegerField(_("stock"), default=0)
 
     class Meta:
         ordering = ("-price",)
-        verbose_name_plural = _("Variations")
-        verbose_name = _("Variation")
+        verbose_name_plural = _("variations")
+        verbose_name = _("variation")
 
     def __str__(self):
         return self.variation_name or self.product.product_name

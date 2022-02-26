@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Loja do Vlad\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-25 17:22-0300\n"
+"POT-Creation-Date: 2022-02-25 20:57-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Vlad Hietala <vlad@fkava.com>\n"
 "Language-Team: Vlad <vlad@li.org>\n"
@@ -45,7 +45,7 @@ msgstr "Enviado"
 msgid "Finished"
 msgstr "Finalizado"
 
-#: loja/order/models.py:24 loja/profile/models.py:11
+#: loja/order/models.py:24 loja/profile/models.py:12
 msgid "user"
 msgstr "usuário"
 
@@ -57,40 +57,44 @@ msgstr "total"
 msgid "status"
 msgstr "status"
 
-#: loja/order/models.py:34
-msgid "Order"
-msgstr "Pedido"
-
-#: loja/order/models.py:35
-msgid "Orders"
-msgstr "Pedidos"
-
-#: loja/order/models.py:46
+#: loja/order/models.py:34 loja/order/models.py:46
 msgid "order"
 msgstr "pedido"
 
-#: loja/order/models.py:47 loja/product/models.py:74
+#: loja/order/models.py:35
+#, fuzzy
+#| msgid "order"
+msgid "orders"
+msgstr "pedidos"
+
+#: loja/order/models.py:47 loja/product/models.py:34 loja/product/models.py:78
 msgid "product"
 msgstr "produto"
 
 #: loja/order/models.py:48
-msgid "product_id"
-msgstr "id_produto"
+#, fuzzy
+#| msgid "product_id"
+msgid "product id"
+msgstr "id do produto"
 
-#: loja/order/models.py:49
+#: loja/order/models.py:49 loja/product/models.py:92
 msgid "variation"
 msgstr "variação"
 
 #: loja/order/models.py:50
-msgid "variation_id"
-msgstr "id_cariacao"
+#, fuzzy
+#| msgid "variation_id"
+msgid "variation id"
+msgstr "id da variação"
 
-#: loja/order/models.py:51 loja/product/models.py:25 loja/product/models.py:79
+#: loja/order/models.py:51 loja/product/models.py:25 loja/product/models.py:83
 msgid "price"
 msgstr "preço"
 
-#: loja/order/models.py:53
-msgid "promotional_price"
+#: loja/order/models.py:53 loja/product/models.py:27 loja/product/models.py:85
+#, fuzzy
+#| msgid "promotional_price"
+msgid "promotional price"
 msgstr "preço promocional"
 
 #: loja/order/models.py:55
@@ -102,12 +106,16 @@ msgid "image"
 msgstr "imagem"
 
 #: loja/order/models.py:61
-msgid "Order item"
-msgstr "Item do pedido"
+#, fuzzy
+#| msgid "Order item"
+msgid "order item"
+msgstr "item do pedido"
 
 #: loja/order/models.py:62
-msgid "Order items"
-msgstr "Itens do pedido"
+#, fuzzy
+#| msgid "Order items"
+msgid "order items"
+msgstr "itens do pedido"
 
 #: loja/product/models.py:16
 msgid "Variable"
@@ -118,44 +126,50 @@ msgid "Simple"
 msgstr "Simples"
 
 #: loja/product/models.py:18
-msgid "product_name"
-msgstr "nome_produto"
+#, fuzzy
+#| msgid "product_name"
+msgid "product name"
+msgstr "nome do produto"
 
 #: loja/product/models.py:19
-msgid "short_description"
-msgstr "descrição_curta"
+#, fuzzy
+#| msgid "short_description"
+msgid "short description"
+msgstr "descrição curta"
 
 #: loja/product/models.py:20
-msgid "long_description"
-msgstr "descrição_longa"
+#, fuzzy
+#| msgid "long_description"
+msgid "long description"
+msgstr "descrição longa"
 
 #: loja/product/models.py:24
 msgid "slug"
 msgstr "slug"
 
-#: loja/product/models.py:26 loja/product/models.py:80
-msgid "promo_price"
-msgstr "preço_promocional"
-
-#: loja/product/models.py:27
+#: loja/product/models.py:29
 msgid "type"
 msgstr "tipo"
 
-#: loja/product/models.py:78
+#: loja/product/models.py:35
+#, fuzzy
+#| msgid "product"
+msgid "products"
+msgstr "produtos"
+
+#: loja/product/models.py:82
 msgid "name"
 msgstr "nome"
 
-#: loja/product/models.py:81
+#: loja/product/models.py:87
 msgid "stock"
 msgstr "estoque"
 
-#: loja/product/models.py:85
-msgid "Variations"
-msgstr "Variações"
-
-#: loja/product/models.py:86
-msgid "Variation"
-msgstr "Variacão"
+#: loja/product/models.py:91
+#, fuzzy
+#| msgid "variation"
+msgid "variations"
+msgstr "variação"
 
 #: loja/product/templates/product/product_detail.html:7
 #: loja/product/templates/product/product_detail.html:13
@@ -167,49 +181,70 @@ msgstr "Bem vindo à nossa página"
 msgid "Postal Code"
 msgstr ""
 
-#: loja/profile/models.py:12
+#: loja/profile/models.py:13
 msgid "birth date"
 msgstr "data de nascimento"
 
-#: loja/profile/models.py:14
+#: loja/profile/models.py:15
 msgid "address"
 msgstr "endereço"
 
-#: loja/profile/models.py:15
+#: loja/profile/models.py:16
 msgid "number"
 msgstr "número"
 
-#: loja/profile/models.py:16
+#: loja/profile/models.py:17
 msgid "complement"
 msgstr "complemento"
 
-#: loja/profile/models.py:17
+#: loja/profile/models.py:18
 msgid "neighborhood"
 msgstr "bairro"
 
-#: loja/profile/models.py:18
+#: loja/profile/models.py:19
 msgid "city"
 msgstr "cidade"
 
-#: loja/profile/models.py:19
+#: loja/profile/models.py:20
 msgid "state"
 msgstr "estado"
+
+#: loja/profile/models.py:24
+#, fuzzy
+#| msgid "Profile"
+msgid "profile"
+msgstr "perfil"
+
+#: loja/profile/models.py:25
+#, fuzzy
+#| msgid "Profiles"
+msgid "profiles"
+msgstr "perfis"
 
 #: loja/settings/base.py:117
 msgid "Brazilian Portuguese"
 msgstr "Português Brasileiro"
+
+#~ msgid "Variations"
+#~ msgstr "Variações"
+
+#~ msgid "Variation"
+#~ msgstr "Variacão"
+
+#~ msgid "promo_price"
+#~ msgstr "preço_promocional"
+
+#~ msgid "Order"
+#~ msgstr "Pedido"
+
+#~ msgid "Orders"
+#~ msgstr "Pedidos"
 
 #~ msgid "Products"
 #~ msgstr "Produtos"
 
 #~ msgid "Product"
 #~ msgstr "Produto"
-
-#~ msgid "Profile"
-#~ msgstr "Perfil"
-
-#~ msgid "Profiles"
-#~ msgstr "Perfis"
 
 #~ msgid "English"
 #~ msgstr "Inglês"

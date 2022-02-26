@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Loja do Vlad\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-25 20:57-0300\n"
+"POT-Creation-Date: 2022-02-25 23:01-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Vlad Hietala <vlad@fkava.com>\n"
 "Language-Team: Vlad <vlad@li.org>\n"
@@ -185,43 +185,43 @@ msgstr ""
 msgid "birth date"
 msgstr "data de nascimento"
 
-#: loja/profile/models.py:15
+#: loja/profile/models.py:17
 msgid "address"
 msgstr "endereço"
 
-#: loja/profile/models.py:16
+#: loja/profile/models.py:18
 msgid "number"
 msgstr "número"
 
-#: loja/profile/models.py:17
+#: loja/profile/models.py:19
 msgid "complement"
 msgstr "complemento"
 
-#: loja/profile/models.py:18
+#: loja/profile/models.py:20
 msgid "neighborhood"
 msgstr "bairro"
 
-#: loja/profile/models.py:19
+#: loja/profile/models.py:21
 msgid "city"
 msgstr "cidade"
 
-#: loja/profile/models.py:20
+#: loja/profile/models.py:22
 msgid "state"
 msgstr "estado"
 
-#: loja/profile/models.py:24
+#: loja/profile/models.py:26
 #, fuzzy
 #| msgid "Profile"
 msgid "profile"
 msgstr "perfil"
 
-#: loja/profile/models.py:25
+#: loja/profile/models.py:27
 #, fuzzy
 #| msgid "Profiles"
 msgid "profiles"
 msgstr "perfis"
 
-#: loja/settings/base.py:117
+#: loja/settings/base.py:118
 msgid "Brazilian Portuguese"
 msgstr "Português Brasileiro"
 

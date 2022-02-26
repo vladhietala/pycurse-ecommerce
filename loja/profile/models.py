@@ -11,7 +11,9 @@ class Profile(models.Model):
 
     user = models.OneToOneField(User, verbose_name=_("user"), on_delete=models.CASCADE)
     birth_date = models.DateField(_("birth date"))
-    cpf = br_models.BRCPFField(br_models.BRCPFField.description)
+    cpf = br_models.BRCPFField(
+        br_models.BRCPFField.description, max_length=11, unique=True
+    )
     address = models.CharField(_("address"), max_length=50)
     number = models.CharField(_("number"), max_length=5)
     complement = models.CharField(_("complement"), max_length=30, null=True, blank=True)

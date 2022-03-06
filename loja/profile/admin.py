@@ -14,5 +14,5 @@ class UserProfileAdmin(admin.ModelAdmin):
         js = (
             "js/site.js",
             "//code.jquery.com/jquery-3.6.0.js",
-            "//cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js",
+            "//cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/jquery.inputmask.min.js",  # noqa
         )

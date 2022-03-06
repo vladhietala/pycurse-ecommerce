@@ -56,7 +56,7 @@ class Product(models.Model):
         img_pil = Image.open(image)
         original_width, original_height = img_pil.size
         if original_width <= max_image_size:
-            return
+            return image
 
         output = BytesIO()
         new_height = round(original_height * max_image_size / original_width)
@@ -82,7 +82,7 @@ class Variation(models.Model):
     variation_name = models.CharField(_("name"), max_length=50, blank=True, null=True)
     price = models.DecimalField(_("price"), max_digits=6, decimal_places=2)
     promo_price = models.DecimalField(
-        _("promotional price"), max_digits=6, decimal_places=2
+        _("promotional price"), max_digits=6, decimal_places=2, blank=True, null=True
     )
     stock = models.PositiveIntegerField(_("stock"), default=0)
 

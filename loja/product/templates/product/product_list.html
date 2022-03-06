@@ -23,8 +23,8 @@
                                 {{ product.short_description | truncatechars:100 }}
                             </p>
                             <div class="container product-price-block text-center">
-                                {% if product.promo_price %}<span class="product-old-price text-muted">{{ product.price | money }}</span>{% endif %}
-                                <span class="product-price">{{ product.price | money }}</span>
+                                {% if product.promo_price %}<span class="product-old-price text-muted">{{ product.price | currency }}</span>{% endif %}
+                                <span class="product-price">{{ product.price | currency }}</span>
                             </div>
                         </div>
                         <div class="card-footer bg-transparent border-top-light-custom text-center">

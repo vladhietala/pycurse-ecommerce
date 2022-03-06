@@ -123,7 +123,7 @@ LANGUAGES = [
 
 STATIC_ROOT = BASE_DIR / "static"
 STATIC_URL = "/static/"
-STATICFILES_DIRS = (BASE_DIR / "templates" / "static",)
+STATICFILES_DIRS = (BASE_DIR / "templates" / "assets", BASE_DIR / "assets")
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 MEDIA_URL = "/media/"

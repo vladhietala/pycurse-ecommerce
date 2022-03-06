@@ -7,5 +7,5 @@ register = Library()
 
 
 @register.filter
-def money(val):
-    return utils.money(val)
+def currency(val):
+    return utils.currency(val)

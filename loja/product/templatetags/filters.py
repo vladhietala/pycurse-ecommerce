@@ -14,3 +14,8 @@ def currency(val):
 @register.filter
 def total_items(cart):
     return utils.total_items(cart)
+
+
+@register.filter
+def total_value(cart):
+    return utils.total_value(cart)

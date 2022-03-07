@@ -64,7 +64,7 @@
                     <table class="table">
                         <tr>
                             <td class="font-weight-bold">{{ _("subtotal") | capfirst }}</td>
-                            <td>R$100000</td>
+                            <td>{{ request.session.cart| total_value | currency }}</td>
                         </tr>
                     </table>
                 </div>

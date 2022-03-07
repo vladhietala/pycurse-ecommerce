@@ -76,7 +76,7 @@ class AddToCart(View):
                         str3,
                     ),
                 )
-            cart_qty = var_stock
+                cart_qty = var_stock
             cart[var_id]["quantity"] = cart_qty
             cart[var_id]["total_price"] = cart_qty * unit_price
             cart[var_id]["total_price_promo"] = (

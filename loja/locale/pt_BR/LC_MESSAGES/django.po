@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Loja do Vlad\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-25 23:01-0300\n"
+"POT-Creation-Date: 2022-03-07 02:21-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Vlad Hietala <vlad@fkava.com>\n"
 "Language-Team: Vlad <vlad@li.org>\n"
@@ -49,7 +49,7 @@ msgstr "Finalizado"
 msgid "user"
 msgstr "usuário"
 
-#: loja/order/models.py:25
+#: loja/order/models.py:25 loja/product/templates/product/cart.html:19
 msgid "total"
 msgstr "total"
 
@@ -68,6 +68,8 @@ msgid "orders"
 msgstr "pedidos"
 
 #: loja/order/models.py:47 loja/product/models.py:34 loja/product/models.py:78
+#: loja/product/templates/product/cart.html:16 loja/product/views.py:100
+#: loja/product/views.py:117
 msgid "product"
 msgstr "produto"
 
@@ -78,6 +80,7 @@ msgid "product id"
 msgstr "id do produto"
 
 #: loja/order/models.py:49 loja/product/models.py:92
+#: loja/product/templates/product/cart.html:17
 msgid "variation"
 msgstr "variação"
 
@@ -88,20 +91,23 @@ msgid "variation id"
 msgstr "id da variação"
 
 #: loja/order/models.py:51 loja/product/models.py:25 loja/product/models.py:83
+#: loja/product/templates/product/cart.html:20
 msgid "price"
 msgstr "preço"
 
 #: loja/order/models.py:53 loja/product/models.py:27 loja/product/models.py:85
+#: loja/product/templates/product/cart.html:21
 #, fuzzy
 #| msgid "promotional_price"
 msgid "promotional price"
 msgstr "preço promocional"
 
-#: loja/order/models.py:55
+#: loja/order/models.py:55 loja/product/templates/product/cart.html:18
 msgid "quantity"
 msgstr "quantidade"
 
 #: loja/order/models.py:56 loja/product/models.py:22
+#: loja/product/templates/product/cart.html:15
 msgid "image"
 msgstr "imagem"
 
@@ -171,15 +177,54 @@ msgstr "estoque"
 msgid "variations"
 msgstr "variação"
 
-#: loja/product/templates/product/product_detail.html:7
-#: loja/product/templates/product/product_detail.html:13
-#: loja/product/views.py:29
-msgid "Welcome to our page"
-msgstr "Bem vindo à nossa página"
+#: loja/product/templates/product/cart.html:7
+msgid "shoping cart"
+msgstr "carrinho de compras"
 
-#: loja/product/views.py:30
-msgid "Postal Code"
-msgstr ""
+#: loja/product/templates/product/cart.html:10
+msgid "items added to cart"
+msgstr "itens adicionados ao carrinho"
+
+#: loja/product/templates/product/cart.html:52
+msgid "your cart is empty"
+msgstr "seu carrinho está vazio"
+
+#: loja/product/templates/product/cart.html:61
+#: loja/product/templates/product/cart.html:66
+msgid "subtotal"
+msgstr "subtotal"
+
+#: loja/product/templates/product/cart.html:73
+msgid "checkout"
+msgstr "fechar pedido"
+
+#: loja/product/views.py:32
+msgid "product doesn't exist"
+msgstr "produto não existe"
+
+#: loja/product/views.py:56
+msgid "not enough stock"
+msgstr "sem estoque"
+
+#: loja/product/views.py:63
+msgid "not enought stock for"
+msgstr "sem estoque para"
+
+#: loja/product/views.py:64
+msgid "added"
+msgstr "acionados"
+
+#: loja/product/views.py:65
+msgid "items"
+msgstr "itens"
+
+#: loja/product/views.py:101
+msgid "added to cart"
+msgstr "adicionado ao carrinho"
+
+#: loja/product/views.py:118
+msgid "removed from cart"
+msgstr "removido do carrinho"
 
 #: loja/profile/models.py:13
 msgid "birth date"
@@ -216,14 +261,21 @@ msgid "profile"
 msgstr "perfil"
 
 #: loja/profile/models.py:27
-#, fuzzy
-#| msgid "Profiles"
 msgid "profiles"
 msgstr "perfis"
 
 #: loja/settings/base.py:118
 msgid "Brazilian Portuguese"
 msgstr "Português Brasileiro"
+
+#~ msgid "not enought stock for {} {}, added {} itens"
+#~ msgstr "não há estoque para {} {}, adiocionado {} itens"
+
+#~ msgid "product {} {} added to cart"
+#~ msgstr "produto {} {} adicionado ao carrinho"
+
+#~ msgid "Welcome to our page"
+#~ msgstr "Bem vindo à nossa página"
 
 #~ msgid "Variations"
 #~ msgstr "Variações"

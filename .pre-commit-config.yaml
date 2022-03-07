@@ -24,6 +24,10 @@ repos:
       - id: flake8
         args: ["--config=.flake8"]
         additional_dependencies: [flake8-isort]
+  - repo: https://github.com/Riverside-Healthcare/djLint
+    rev: 0.7.5 # grab latest tag from GitHub
+    hooks:
+      - id: djlint-django
 ci:
   autoupdate_schedule: weekly
   skip: []

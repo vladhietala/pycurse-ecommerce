@@ -9,3 +9,8 @@ register = Library()
 @register.filter
 def currency(val):
     return utils.currency(val)
+
+
+@register.filter
+def total_items(cart):
+    return utils.total_items(cart)

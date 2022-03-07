@@ -7,3 +7,7 @@ def currency(val, currency_sign="R$"):
         str = humanize.intcomma(val)
         return f"{currency_sign} {str}"
     return ""
+
+
+def total_items(cart):
+    return sum([i["quantity"] for i in cart.values()])

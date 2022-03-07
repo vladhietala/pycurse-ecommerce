@@ -48,7 +48,7 @@
                         <option data-price="{{ var.price | default_if_none:0 }}"
                                 data-promotional-price="{{ var.promo_price | default_if_none:0 }}"
                                 value="{{ var.id }}">
-                            {{ var.variation_name }}
+                            {{ var }}
                         </option>
                     {% endfor %}
                 </select>

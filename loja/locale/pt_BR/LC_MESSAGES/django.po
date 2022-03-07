@@ -1,0 +1,311 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Loja do Vlad\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-07 02:21-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Vlad Hietala <vlad@fkava.com>\n"
+"Language-Team: Vlad <vlad@li.org>\n"
+"Language: br\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=5; plural=((n%10 == 1) && (n%100 != 11) && (n%100 !"
+"=71) && (n%100 !=91) ? 0 :(n%10 == 2) && (n%100 != 12) && (n%100 !=72) && (n"
+"%100 !=92) ? 1 :(n%10 ==3 || n%10==4 || n%10==9) && (n%100 < 10 || n% 100 > "
+"19) && (n%100 < 70 || n%100 > 79) && (n%100 < 90 || n%100 > 99) ? 2 :(n != 0 "
+"&& n % 1000000 == 0) ? 3 : 4);\n"
+
+#: loja/order/models.py:16
+msgid "Created"
+msgstr "Criado"
+
+#: loja/order/models.py:17
+msgid "Aproved"
+msgstr "Aprovado"
+
+#: loja/order/models.py:18
+msgid "Rejected"
+msgstr "Rejeitado"
+
+#: loja/order/models.py:19
+msgid "Pending"
+msgstr "Pendente"
+
+#: loja/order/models.py:20
+msgid "Sent"
+msgstr "Enviado"
+
+#: loja/order/models.py:21
+msgid "Finished"
+msgstr "Finalizado"
+
+#: loja/order/models.py:24 loja/profile/models.py:12
+msgid "user"
+msgstr "usuário"
+
+#: loja/order/models.py:25 loja/product/templates/product/cart.html:19
+msgid "total"
+msgstr "total"
+
+#: loja/order/models.py:27
+msgid "status"
+msgstr "status"
+
+#: loja/order/models.py:34 loja/order/models.py:46
+msgid "order"
+msgstr "pedido"
+
+#: loja/order/models.py:35
+#, fuzzy
+#| msgid "order"
+msgid "orders"
+msgstr "pedidos"
+
+#: loja/order/models.py:47 loja/product/models.py:34 loja/product/models.py:78
+#: loja/product/templates/product/cart.html:16 loja/product/views.py:100
+#: loja/product/views.py:117
+msgid "product"
+msgstr "produto"
+
+#: loja/order/models.py:48
+#, fuzzy
+#| msgid "product_id"
+msgid "product id"
+msgstr "id do produto"
+
+#: loja/order/models.py:49 loja/product/models.py:92
+#: loja/product/templates/product/cart.html:17
+msgid "variation"
+msgstr "variação"
+
+#: loja/order/models.py:50
+#, fuzzy
+#| msgid "variation_id"
+msgid "variation id"
+msgstr "id da variação"
+
+#: loja/order/models.py:51 loja/product/models.py:25 loja/product/models.py:83
+#: loja/product/templates/product/cart.html:20
+msgid "price"
+msgstr "preço"
+
+#: loja/order/models.py:53 loja/product/models.py:27 loja/product/models.py:85
+#: loja/product/templates/product/cart.html:21
+#, fuzzy
+#| msgid "promotional_price"
+msgid "promotional price"
+msgstr "preço promocional"
+
+#: loja/order/models.py:55 loja/product/templates/product/cart.html:18
+msgid "quantity"
+msgstr "quantidade"
+
+#: loja/order/models.py:56 loja/product/models.py:22
+#: loja/product/templates/product/cart.html:15
+msgid "image"
+msgstr "imagem"
+
+#: loja/order/models.py:61
+#, fuzzy
+#| msgid "Order item"
+msgid "order item"
+msgstr "item do pedido"
+
+#: loja/order/models.py:62
+#, fuzzy
+#| msgid "Order items"
+msgid "order items"
+msgstr "itens do pedido"
+
+#: loja/product/models.py:16
+msgid "Variable"
+msgstr "Variável"
+
+#: loja/product/models.py:16
+msgid "Simple"
+msgstr "Simples"
+
+#: loja/product/models.py:18
+#, fuzzy
+#| msgid "product_name"
+msgid "product name"
+msgstr "nome do produto"
+
+#: loja/product/models.py:19
+#, fuzzy
+#| msgid "short_description"
+msgid "short description"
+msgstr "descrição curta"
+
+#: loja/product/models.py:20
+#, fuzzy
+#| msgid "long_description"
+msgid "long description"
+msgstr "descrição longa"
+
+#: loja/product/models.py:24
+msgid "slug"
+msgstr "slug"
+
+#: loja/product/models.py:29
+msgid "type"
+msgstr "tipo"
+
+#: loja/product/models.py:35
+#, fuzzy
+#| msgid "product"
+msgid "products"
+msgstr "produtos"
+
+#: loja/product/models.py:82
+msgid "name"
+msgstr "nome"
+
+#: loja/product/models.py:87
+msgid "stock"
+msgstr "estoque"
+
+#: loja/product/models.py:91
+#, fuzzy
+#| msgid "variation"
+msgid "variations"
+msgstr "variação"
+
+#: loja/product/templates/product/cart.html:7
+msgid "shoping cart"
+msgstr "carrinho de compras"
+
+#: loja/product/templates/product/cart.html:10
+msgid "items added to cart"
+msgstr "itens adicionados ao carrinho"
+
+#: loja/product/templates/product/cart.html:52
+msgid "your cart is empty"
+msgstr "seu carrinho está vazio"
+
+#: loja/product/templates/product/cart.html:61
+#: loja/product/templates/product/cart.html:66
+msgid "subtotal"
+msgstr "subtotal"
+
+#: loja/product/templates/product/cart.html:73
+msgid "checkout"
+msgstr "fechar pedido"
+
+#: loja/product/views.py:32
+msgid "product doesn't exist"
+msgstr "produto não existe"
+
+#: loja/product/views.py:56
+msgid "not enough stock"
+msgstr "sem estoque"
+
+#: loja/product/views.py:63
+msgid "not enought stock for"
+msgstr "sem estoque para"
+
+#: loja/product/views.py:64
+msgid "added"
+msgstr "acionados"
+
+#: loja/product/views.py:65
+msgid "items"
+msgstr "itens"
+
+#: loja/product/views.py:101
+msgid "added to cart"
+msgstr "adicionado ao carrinho"
+
+#: loja/product/views.py:118
+msgid "removed from cart"
+msgstr "removido do carrinho"
+
+#: loja/profile/models.py:13
+msgid "birth date"
+msgstr "data de nascimento"
+
+#: loja/profile/models.py:17
+msgid "address"
+msgstr "endereço"
+
+#: loja/profile/models.py:18
+msgid "number"
+msgstr "número"
+
+#: loja/profile/models.py:19
+msgid "complement"
+msgstr "complemento"
+
+#: loja/profile/models.py:20
+msgid "neighborhood"
+msgstr "bairro"
+
+#: loja/profile/models.py:21
+msgid "city"
+msgstr "cidade"
+
+#: loja/profile/models.py:22
+msgid "state"
+msgstr "estado"
+
+#: loja/profile/models.py:26
+#, fuzzy
+#| msgid "Profile"
+msgid "profile"
+msgstr "perfil"
+
+#: loja/profile/models.py:27
+msgid "profiles"
+msgstr "perfis"
+
+#: loja/settings/base.py:118
+msgid "Brazilian Portuguese"
+msgstr "Português Brasileiro"
+
+#~ msgid "not enought stock for {} {}, added {} itens"
+#~ msgstr "não há estoque para {} {}, adiocionado {} itens"
+
+#~ msgid "product {} {} added to cart"
+#~ msgstr "produto {} {} adicionado ao carrinho"
+
+#~ msgid "Welcome to our page"
+#~ msgstr "Bem vindo à nossa página"
+
+#~ msgid "Variations"
+#~ msgstr "Variações"
+
+#~ msgid "Variation"
+#~ msgstr "Variacão"
+
+#~ msgid "promo_price"
+#~ msgstr "preço_promocional"
+
+#~ msgid "Order"
+#~ msgstr "Pedido"
+
+#~ msgid "Orders"
+#~ msgstr "Pedidos"
+
+#~ msgid "Products"
+#~ msgstr "Produtos"
+
+#~ msgid "Product"
+#~ msgstr "Produto"
+
+#~ msgid "English"
+#~ msgstr "Inglês"
+
+#~ msgid "German"
+#~ msgstr "Alemão"
+
+#~ msgid "French"
+#~ msgstr "Francês"
+
+#~ msgid "Spanish"
+#~ msgstr "Espanhol"

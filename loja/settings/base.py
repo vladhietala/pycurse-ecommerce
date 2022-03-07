@@ -38,7 +38,12 @@ DJANGO_APPS = [
     "django.contrib.humanize",
 ]
 
-THIRD_PARTY_APPS = ["localflavor"]
+THIRD_PARTY_APPS = [
+    "localflavor",
+    "crispy_forms",
+    "crispy_bootstrap5",
+    "fontawesomefree",
+]
 
 LOCAL_APPS = [
     "loja.product",
@@ -106,16 +111,11 @@ LANGUAGE_CODE = "pt-BR"
 TIME_ZONE = "America/Sao_Paulo"
 
 USE_I18N = True
-
+USEL10N = True
 USE_TZ = True
-
-LOCALE_PATHS = [BASE_DIR / "locale"]
+LOCALE_PATHS = [BASE_DIR / "loja" / "locale"]
 LANGUAGES = [
-    ("de", _("German")),
-    ("en", _("English")),
-    ("fr", _("French")),
-    ("es", _("Spanish")),
-    ("pt-BR", _("Brazilian Portuguese")),
+    ("pt-br", _("Brazilian Portuguese")),
 ]
 
 # Static files (CSS, JavaScript, Images)
@@ -123,7 +123,7 @@ LANGUAGES = [
 
 STATIC_ROOT = BASE_DIR / "static"
 STATIC_URL = "/static/"
-STATICFILES_DIRS = (BASE_DIR / "templates" / "static",)
+STATICFILES_DIRS = (BASE_DIR / "templates" / "assets", BASE_DIR / "assets")
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 MEDIA_URL = "/media/"
@@ -153,3 +153,8 @@ AWS_DEFAULT_ACL = "private"
 AWS_LOCATION = env("DJANGO_ENVIROMENT")
 AWS_S3_REGION_NAME = "eu-west-1"
 AWS_S3_FILE_OVERWRITE = False
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+CSRF_TRUSTED_ORIGINS = ["https://*.fkava.com", "https://*.herokuapp.com"]

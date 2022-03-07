@@ -43,9 +43,11 @@
                     <span class="nav-cart-icon mr-2">
                         <i class="fas fa-shopping-cart"></i>
                     </span>
-                    <span class="nav-cart-count mr-1">
-                        <strong>{{ request.session.cart | total_items | default:"" }}</strong>
-                    </span>
+                    {% if request.session.cart %}
+                        <span class="nav-cart-count mr-1">
+                            <strong>{{ request.session.cart | total_items | default:"" }}</strong>
+                        </span>
+                    {% endif %}
                 </a>
             </li>
         </ul>

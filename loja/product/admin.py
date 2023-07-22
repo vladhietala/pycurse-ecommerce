@@ -11,7 +11,14 @@ class VariationInline(admin.TabularInline):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
+    list_display = (
+        "product_name",
+        "short_description",
+        "price",
+        "promo_price",
+    )
     inlines = [VariationInline]
+    exclude = ("slug",)
 
 
 @admin.register(Variation)

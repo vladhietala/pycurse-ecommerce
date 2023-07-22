@@ -150,6 +150,6 @@ cython_debug/
 
 # Django
 media/*
-static/*
+static
 
 !**/.gitkeep

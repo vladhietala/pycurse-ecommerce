@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load l10n %}
+{% load crispy_forms_tags %}
+{% load humanize %}
+{% load filters %}
+{% block title %}
+    {{ product.product_name | title }}
+{% endblock title %}
+{% block content %}
+    <div class="row">
+        <div class="col-lg">
+            <div class="row no-gutters">
+                <div class="col-lg-12">
+                    {% if product.image %}
+                        <img class="img-fluid"
+                             src="{{ product.image.url }}"
+                             width="100%"
+                             height="100%"
+                             alt="{{ product.product_name }}"/>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-lg">
+            <div class="mt-4 mt-lg-0">
+                <h1 class="h2">{{ product.product_name }}</h1>
+                <p class="lead">
+                    {{ product.short_description }}
+                </p>
+                <p class="lead">
+                    {% if product.promo_price %}
+                        <span id="var-scratched-price" class="lead product-old-price mask-money">{{ product.price | currency }}</span>
+                        <span id="var-effective-price" class="lead product-price mask-money">{{ product.promo_price | currency }}</span>
+                    {% else %}
+                        <span id="var-scratched-price"
+                              class="lead product-price text-muted mask-money">{{ product.price | currency }}</span>
+                    </div>
+                    <span id="var-effective-price"
+                          class="lead product-price text-muted mask-money">{{ product.price | currency }}</span>
+                {% endif %}
+            </p>
+        </div>
+        <form action="{% url 'product:addtocart' %}" id="form-add-to-cart">
+            <div class="form-group">
+                <select id="select-variation" name="vid" class="form-control form-control-lg">
+                    {% for var in product.variation_set.all %}
+                        <option data-price="{{ var.price | default_if_none:0 }}"
+                                data-promotional-price="{{ var.promo_price | default_if_none:0 }}"
+                                value="{{ var.id }}">
+                            {{ var }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="text-left">
+                <button type="submit" class="btn btn-primary btn-lg btn-block">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    Adicionar ao carrinho
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="mt-5 mb-5">
+            <h2 class="text-center">{{ product.product_name }}</h2>
+            <p>
+                {{ product.long_description | linebreaks }}
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock content %}

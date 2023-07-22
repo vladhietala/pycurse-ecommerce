@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load filters %}
+{% block content %}
+    <div class="row mt-3">
+        <div class="col">
+            <h3>{{ _("shoping cart") | title }}</h3>
+            {% if request.session.cart %}
+                <p class="lead">
+                    {{ _("items added to cart") | capfirst }}
+                </p>
+                <div class="table-responsive">
+                    <table class="table">
+                        <tr>
+                            <th class="d-none d-lg-block">{{ _("image") | title }}</th>
+                            <th>{{ _("product") | title }}</th>
+                            <th>{{ _("variation") | title }}</th>
+                            <th>{{ _("quantity") | title }}</th>
+                            <th>{{ _("total") | title }}</th>
+                            <th>{{ _("price") | title }}</th>
+                            <th>{{ _("promotional price") | title }}</th>
+                        </tr>
+                        {% for product in request.session.cart.values %}
+                            <tr>
+                                <td class="d-none d-lg-block">
+                                    <a href="{% url 'product:detail' product.slug %}" class="link-primary">
+                                        <img class="cart-img"
+                                             src="{{ product.image.url }}"
+                                             alt="alt"
+                                             width="100%"
+                                             height="100%"/>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="{% url 'product:detail' product.slug %}" class="link-primary">{{ product.product_name }}</a>
+                                    <a class="ml-3"
+                                       href="{% url 'product:removefromcart' product.variation_id %}">
+                                        <i class="fas fa-times-circle text-danger" aria-hidden="true"></i>
+                                    </a>
+                                </td>
+                                <td>{{ product.variation_name }}</td>
+                                <td>{{ product.quantity }}</td>
+                                <td>{{ product.total_price_promo | default:product.total_price | currency }}</td>
+                                <td>{{ product.total_price | currency }}</td>
+                                <td>{{ product.total_price_promo | currency }}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            {% else %}
+                <p class="lead">
+                    {{ _("your cart is empty") | capfirst }}
+                </p>
+            {% endif %}
+        </div>
+    </div>
+    {% if request.session.cart %}
+        <div class="row mt-3">
+            <div class="col-lg">
+                <p class="lead">
+                    {{ _("subtotal") | title }}
+                </p>
+                <div class="table-responsive">
+                    <table class="table">
+                        <tr>
+                            <td class="font-weight-bold">{{ _("subtotal") | capfirst }}</td>
+                            <td>{{ request.session.cart| total_value | currency }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="col-lg mt-auto">
+                <a class="btn btn-lg btn-block btn-primary" href="#">{{ _("checkout") | title }}</a>
+            </div>
+        </div>
+    {% endif %}
+{% endblock content %}

@@ -1,8 +1,19 @@
 # -*- coding: utf-8 -*-
-from django.shortcuts import render
+from django.views import View
+from django.views.generic import CreateView, DetailView
 
-# Create your views here.
+from .models import Order
 
 
-def index(request):
-    return render(request, "index.html")
+class PaymentView(CreateView):
+    model = Order
+    template_name = "payment.html"
+
+
+class CloseOrderView(View):
+    pass
+
+
+class OrderDetailView(DetailView):
+    model = Order
+    template_name = ".html"
